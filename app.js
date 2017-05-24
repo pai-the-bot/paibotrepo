@@ -78,6 +78,12 @@ bot.recognizer({
                 case ' i m ready':
                     intent = { score: 1.0, intent: 'Ready' };
                     break;
+                case ' Thanks':
+                    intent = { score: 1.0, intent: 'Thanks' };
+                    break;
+                case ' Bye':
+                    intent = { score: 1.0, intent: 'Bye' };
+                    break;
             }
         }
         done(null, intent);
@@ -87,6 +93,9 @@ bot.recognizer({
 
 bot.dialog('/', new builder.IntentDialog()
     .matches(/^ready/i, '/ready')
+    .matches(/^thanks/i, '/goodbye')
+    .matches(/^bye/i, '/goodbye')
+    .matches(/^quit/i, '/goodbye')
     .onDefault('/begin'));
 bot.dialog('/begin', [
     function (session, args, next) {
@@ -270,6 +279,12 @@ bot.dialog('/intro', [
     }
 ]);
 
+bot.dialog('/goodbye', [
+    function (session) {
+        session.send("Nice talking to you " + session.userData.name);
+        session.endConversation("See ya later. Bye");
+    }
+]);
 if (useEmulator) {
     var restify = require('restify');
     var server = restify.createServer();
