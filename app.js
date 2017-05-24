@@ -107,7 +107,7 @@ bot.dialog('/begin', [
         }
     },
     function (session, results) {
-        builder.Prompts.text(session,"Would you like to take mock interview today ?");
+        builder.Prompts.text(session,"Would you like to assess your technical skills ?");
     },
     function (session, results) {
         if( (new RegExp( '\\b' + affirmation.join('\\b|\\b') + '\\b') ).test(results.response.toLowerCase()) ){
@@ -118,7 +118,7 @@ bot.dialog('/begin', [
     
       //         session.send("What would you like to assess yourself on today ?");
       //         builder.Prompts.text(session, "You can type something like 'Project Management' or 'Java' or 'Python'");
-                 builder.Prompts.choice(session,"What would you like to assess yourself on today ?",supportedLangs, {listStyle : builder.ListStyle.button});
+                 builder.Prompts.choice(session,"Great. Let's pick any one skill from the list ?",supportedLangs, {listStyle : builder.ListStyle.button});
         }
         else {
 			console.log(results.response.value);
@@ -153,7 +153,7 @@ bot.dialog('/begin', [
         session.send("Thats great... " + session.userData.name);
         session.sendTyping();
   //      session.send("So let's get started. I will start with some basic questions in " + session.userData.skill + " and depending upon how you perform will go deeper");
-        builder.Prompts.text(session, "Is that okay ?");
+        builder.Prompts.text(session, "So shall we start ?");
     },
     function (session, results) {
         var isReady = results.response.toLowerCase();
@@ -233,7 +233,7 @@ bot.dialog('/question', [
         if (qnoid === 5){
             client.end();
             session.send("Thanks for your time " + session.userData.name + " I will share the results with you on your email id");
-            session.endDialog();
+            session.replaceDialog('/goodbye');
         }
         else{
             session.beginDialog('/beginDiscussion');
