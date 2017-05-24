@@ -1,0 +1,39 @@
+INSERT INTO public.p_questions(
+	qid, question, langid, answer, score)
+	VALUES (1, 'Which of the following environment variable for Python is an alternative module search path?', 
+            2, '{"PYTHONPATH","PYTHONSTARTUP","PYTHONCASEOK","PYTHONHOME"}',1.0)
+            
+INSERT INTO public.p_questions(
+	qid, question, langid, answer, score)
+	VALUES (2, 'What is the output of print str[0] if str = ''Hello World!''?', 
+            2, '{"Hello World!","H","ello World!","None of the above"}',1.0)
+            
+INSERT INTO public.p_questions(
+	qid, question, langid, answer, score)
+	VALUES (3, 'What is the output of print tinytuple * 2 if tinytuple = (123, ''john'')?', 
+            2, '{(123, ''john'', 123, ''john'')","(123, ''john'') * 2","Error","None of the above"}',1.0)
+            
+INSERT INTO public.p_questions(
+	qid, question, langid, answer, score)
+	VALUES (4, 'Which of the following function convert a String to a list in python?', 
+            2, '{"repr(x)","eval(str)","tuple(s)","list(s)"}',1.0)
+INSERT INTO public.p_questions(
+	qid, question, langid, answer, score)
+	VALUES (5, 'Which of the following function sets the integer starting value used in generating random numbers?', 
+            2, '{"choice(seq)","randrange ([start,] stop [,step])","random()","seed([x])"}',1.0)
+            
+INSERT INTO public.p_questions(
+	qid, question, langid, answer, score)
+	VALUES (6, 'Which of the following function converts a string to all lowercase?', 
+            2, '{"lower()","lstrip()","min(str)","max(str)"}',1.0)
+INSERT INTO public.p_questions(
+	qid, question, langid, answer, score)
+	VALUES (7, 'What is the output of len([1, 2, 3])?', 
+            2, '{"1","2","3","4"}',1.0)
+            
+INSERT INTO public.p_questions(
+	qid, question, langid, answer, score)
+	VALUES (8, 'What is the following function returns the lowest index in list that obj appears?', 
+            2, '{"list.index(obj)","list.insert(index, obj)","list.pop(obj=list[-1])","list.remove(obj)"}',1.0)
+            
+     

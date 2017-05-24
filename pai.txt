@@ -1,0 +1,26 @@
+
+	Greeting
+	  |
+	Is first user ?  ---Yes > /intro
+	  |
+	 No
+	/Info  -- start now -->  /quest -- > /results 
+			|
+			/schedule
+
+
+    /help   (type help)
+    /quit   (quit or cancel)
+
+
+
+postgresSQL
+
+user
+languages
+questions (level)
+results
+
+USP - Assess your level ? 
+
+	

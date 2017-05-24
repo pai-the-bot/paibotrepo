@@ -36,7 +36,7 @@ client.connect();
 
 
 var supportedLangs= ["Java","C#","Python","Perl"];//,"sql","shell","javascript","project management","database","sybase"];
-var affirmation = ["yes","ok","okay","cool","sure","why not","definitely","ya","yeah"];
+var affirmation = ["yes","ok","okay","cool","sure","why not","fine","definitely","ya","yeah"];
 var useEmulator = (process.env.NODE_ENV == 'development')
 
 
@@ -87,7 +87,6 @@ bot.recognizer({
 
 bot.dialog('/', new builder.IntentDialog()
     .matches(/^ready/i, '/ready')
-    .matches(/^start/i,'/beginDiscussion')
     .onDefault('/begin'));
 bot.dialog('/begin', [
     function (session, args, next) {
@@ -142,9 +141,9 @@ bot.dialog('/begin', [
     },
     function (session, results) {
         session.userData.coding = results.response;
-        session.send("Got it... " + session.userData.name);
+        session.send("Thats great... " + session.userData.name);
         session.sendTyping();
-        session.send("So let's get started. I will start with some basic questions in " + session.userData.skill + " and depending upon how you perform will go deeper");
+  //      session.send("So let's get started. I will start with some basic questions in " + session.userData.skill + " and depending upon how you perform will go deeper");
         builder.Prompts.text(session, "Is that okay ?");
     },
     function (session, results) {
@@ -178,7 +177,7 @@ bot.dialog('readyDialog', function (session) {
       session.send("Alright "+ session.userData.name);
       session.send("Ok. At anytime during our discussion just say help if you have any queries");
       session.beginDialog('/beginDiscussion');
-      session.beginDialog('/beginQuestions');
+      qnoid = 0;
       session.endDialog();
 }).triggerAction({ matches: 'Ready' });
 
@@ -249,7 +248,7 @@ bot.dialog('/intro', [
                 console.log("Inside err");
                 session.send("Hi " + name);
                 session.sendTyping();
-                session.send("My name is Pai"); //and my job is to take online interviews for screening");
+                session.send("I am Pai from TapRep. They say I am tech genius and I can help you become one"); //and my job is to take online interviews for screening");
                 session.endDialog();
                 return;
             }
@@ -261,7 +260,7 @@ bot.dialog('/intro', [
             else {
                 session.send("Hi " + name);
                 session.sendTyping();
-                session.send("My name is Pai"); //and my job is to take online interviews for screening");
+                session.send("I am Pai from TapRep. They say I am tech genius and I can help you become one");
                 session.endDialog(); 
             }
             

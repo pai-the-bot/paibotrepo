@@ -1,0 +1,10 @@
+"qid","question","langid","answer","score"
+1,"What do these mean to you: @classmethod, @staticmethod, @property?",1,"[u'These are decorators. A decorator is a special kind of function that either takes a function and returns a function, or takes a class and returns a class. The @ symbol is just syntactic sugar that allows you to decorate something in a way that is easy to read.']",1.0
+2,"How Does Exception Handling In Python Differ From Java? Also, List The Optional Clauses For A <Try-Except> Block In Python?",1,"[u'try-except-finally', u' try-except-else']",1.0
+3,"What is PEP 8?",1,"[u'PEP 8 is a coding convention, a set of recommendation, about how to write your Python code more readable.']",1.0
+4,"What is pickling and unpickling?",1,"[u'Pickle module accepts any Python object and converts it into a string representation and dumps it into a file by using dump function, this process is called pickling', u'While the process of retrieving original Python objects from the stored string representation is called unpickling.']",1.0
+5,"What is the difference between list and tuple?",1,"[u'The difference between list and tuple is that list is mutable while tuple is not. Tuple can be hashed for e.g as a key for dictionaries.']",1.0
+6,"What is lambda in Python??",1,"[u'It is a single expression anonymous function often used as inline function.']",1.0
+7,"How can you copy an object in Python?",1,"[u'To copy an object in Python, you can try copy.copy () or copy.deepcopy() for the general case. You cannot copy all objects but most of them.']",1.0
+8,"What is the difference between Xrange and range?",1,"[u'Xrange returns the xrange object while range returns the list, and uses the same memory and no matter what the range size is.']",1.0
+9,"Explain how to delete a file in Python?",1,"[u'By using a command os.remove (filename) or os.unlink(filename)']",1.0
