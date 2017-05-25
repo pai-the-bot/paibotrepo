@@ -160,11 +160,13 @@ bot.dialog('/begin', [
         if( (new RegExp( '\\b' + affirmation.join('\\b|\\b') + '\\b') ).test(isReady) ){
             session.send("Perfect");
             session.beginDialog('/beginDiscussion');
+            qnoid = 0;
         }
         else{
             session.send("Looks like you are not ready yet.");
             session.send("Not an issue. Just say 'ready' whenever you want to start");
             session.endDialog();
+            session.endConversation();
             
         }
 
@@ -282,6 +284,7 @@ bot.dialog('/intro', [
 bot.dialog('/goodbye', [
     function (session) {
         session.send("Nice talking to you " + session.userData.name);
+        qnoid = 0;
         session.endConversation("See ya later. Bye");
     }
 ]);
